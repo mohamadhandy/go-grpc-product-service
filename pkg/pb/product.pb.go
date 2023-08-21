@@ -148,7 +148,7 @@ func (x *CreateProductResponse) GetId() int64 {
 }
 
 // find one data
-type FineOneData struct {
+type FindOneData struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -159,8 +159,8 @@ type FineOneData struct {
 	Price int64  `protobuf:"varint,4,opt,name=price,proto3" json:"price,omitempty"`
 }
 
-func (x *FineOneData) Reset() {
-	*x = FineOneData{}
+func (x *FindOneData) Reset() {
+	*x = FindOneData{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_pkg_pb_product_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -168,13 +168,13 @@ func (x *FineOneData) Reset() {
 	}
 }
 
-func (x *FineOneData) String() string {
+func (x *FindOneData) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*FineOneData) ProtoMessage() {}
+func (*FindOneData) ProtoMessage() {}
 
-func (x *FineOneData) ProtoReflect() protoreflect.Message {
+func (x *FindOneData) ProtoReflect() protoreflect.Message {
 	mi := &file_pkg_pb_product_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -186,33 +186,33 @@ func (x *FineOneData) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use FineOneData.ProtoReflect.Descriptor instead.
-func (*FineOneData) Descriptor() ([]byte, []int) {
+// Deprecated: Use FindOneData.ProtoReflect.Descriptor instead.
+func (*FindOneData) Descriptor() ([]byte, []int) {
 	return file_pkg_pb_product_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *FineOneData) GetId() int64 {
+func (x *FindOneData) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *FineOneData) GetName() string {
+func (x *FindOneData) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *FineOneData) GetStock() int64 {
+func (x *FindOneData) GetStock() int64 {
 	if x != nil {
 		return x.Stock
 	}
 	return 0
 }
 
-func (x *FineOneData) GetPrice() int64 {
+func (x *FindOneData) GetPrice() int64 {
 	if x != nil {
 		return x.Price
 	}
@@ -274,7 +274,7 @@ type FindOneResponse struct {
 
 	Status int64        `protobuf:"varint,1,opt,name=status,proto3" json:"status,omitempty"`
 	Error  string       `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
-	Data   *FineOneData `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	Data   *FindOneData `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
 }
 
 func (x *FindOneResponse) Reset() {
@@ -323,7 +323,7 @@ func (x *FindOneResponse) GetError() string {
 	return ""
 }
 
-func (x *FindOneResponse) GetData() *FineOneData {
+func (x *FindOneResponse) GetData() *FindOneData {
 	if x != nil {
 		return x.Data
 	}
@@ -456,7 +456,7 @@ var file_pkg_pb_product_proto_rawDesc = []byte{
 	0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f,
 	0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x0e,
 	0x0a, 0x02, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x22, 0x5d,
-	0x0a, 0x0b, 0x46, 0x69, 0x6e, 0x65, 0x4f, 0x6e, 0x65, 0x44, 0x61, 0x74, 0x61, 0x12, 0x0e, 0x0a,
+	0x0a, 0x0b, 0x46, 0x69, 0x6e, 0x64, 0x4f, 0x6e, 0x65, 0x44, 0x61, 0x74, 0x61, 0x12, 0x0e, 0x0a,
 	0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a,
 	0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d,
 	0x65, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74, 0x6f, 0x63, 0x6b, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03,
@@ -469,7 +469,7 @@ var file_pkg_pb_product_proto_rawDesc = []byte{
 	0x28, 0x03, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x72,
 	0x72, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72,
 	0x12, 0x28, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14,
-	0x2e, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x2e, 0x46, 0x69, 0x6e, 0x65, 0x4f, 0x6e, 0x65,
+	0x2e, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x2e, 0x46, 0x69, 0x6e, 0x64, 0x4f, 0x6e, 0x65,
 	0x44, 0x61, 0x74, 0x61, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22, 0x40, 0x0a, 0x14, 0x44, 0x65,
 	0x63, 0x72, 0x65, 0x61, 0x73, 0x65, 0x53, 0x74, 0x6f, 0x63, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02,
@@ -514,14 +514,14 @@ var file_pkg_pb_product_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_pkg_pb_product_proto_goTypes = []interface{}{
 	(*CreateProductRequest)(nil),  // 0: product.CreateProductRequest
 	(*CreateProductResponse)(nil), // 1: product.CreateProductResponse
-	(*FineOneData)(nil),           // 2: product.FineOneData
+	(*FindOneData)(nil),           // 2: product.FindOneData
 	(*FindOneRequest)(nil),        // 3: product.FindOneRequest
 	(*FindOneResponse)(nil),       // 4: product.FindOneResponse
 	(*DecreaseStockRequest)(nil),  // 5: product.DecreaseStockRequest
 	(*DecreaseStockResponse)(nil), // 6: product.DecreaseStockResponse
 }
 var file_pkg_pb_product_proto_depIdxs = []int32{
-	2, // 0: product.FindOneResponse.data:type_name -> product.FineOneData
+	2, // 0: product.FindOneResponse.data:type_name -> product.FindOneData
 	0, // 1: product.ProductService.CreateProduct:input_type -> product.CreateProductRequest
 	3, // 2: product.ProductService.FindOne:input_type -> product.FindOneRequest
 	5, // 3: product.ProductService.DecreaseStock:input_type -> product.DecreaseStockRequest
@@ -566,7 +566,7 @@ func file_pkg_pb_product_proto_init() {
 			}
 		}
 		file_pkg_pb_product_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FineOneData); i {
+			switch v := v.(*FindOneData); i {
 			case 0:
 				return &v.state
 			case 1:

@@ -2,7 +2,6 @@ package services
 
 import (
 	"context"
-	"fmt"
 	"go-grpc-product-svc/pkg/db"
 	"go-grpc-product-svc/pkg/models"
 	"go-grpc-product-svc/pkg/pb"
@@ -15,7 +14,6 @@ type Server struct {
 }
 
 func (s *Server) CreateProduct(ctx context.Context, req *pb.CreateProductRequest) (*pb.CreateProductResponse, error) {
-	fmt.Println("Object req", req)
 	product := models.Product{
 		Name:  req.Name,
 		Stock: req.Stock,
@@ -42,7 +40,7 @@ func (s *Server) FindOne(ctx context.Context, req *pb.FindOneRequest) (*pb.FindO
 		}, nil
 	}
 
-	data := &pb.FineOneData{
+	data := &pb.FindOneData{
 		Id:    product.Id,
 		Name:  product.Name,
 		Stock: product.Stock,
